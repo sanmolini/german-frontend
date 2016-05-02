@@ -154,8 +154,180 @@ nav a:hover {
    Author's custom styles
    ========================================================================== */
 
+/*COMO FUNCIONA EL TARGET*/
+#newcomment {
+  margin-left:0px;
+  transition: ease 1s;
+}
+
+#newcomment:target {
+  margin-left: 70%;
+  background:red;
+}
 
 
+
+
+/*animation styles*/
+section#animationContainer {
+    border: solid 1px rgba(0,0,0,0.5);
+    height: 300px;
+    position: relative;
+    overflow: hidden;
+    display: none;
+}
+
+section#animationContainer:target {
+    display: block;
+}
+#sun , #cloud , #rain {
+    position:absolute;
+}
+div#sun {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: #e3e309;
+    left: 50px;
+    top: 30px;
+    animation: sun 0.5s ease-in;
+    animation-iteration-count: 10;
+}
+
+#cloud {
+    width: 200px;
+    height: 60px;
+    background: #dbdbdb;
+    border-radius: 20px;
+    top:120px;
+    left: 90px;
+    animation: clouds 0.5s ease;
+    animation-iteration-count: 5;
+}
+#cloud:after {
+    content: " ";
+    display:block;
+    position:absolute;
+     width: 100px;
+    height:100px;
+    background: #dbdbdb;
+    border-radius: 50%;
+    bottom: 0px;
+    left: 00px;
+}
+#cloud:before {
+    content: " ";
+    display:block;
+    position:absolute;
+     width: 120px;
+    height:120px;
+    background: #dbdbdb;
+    border-radius: 50%;
+    bottom: 0px;
+    right: 0px;
+}
+
+#rain {
+    width: 10px;
+    height: 50px;
+    background: #2f97ff;
+    border-radius: 20px;
+    top:200px;
+    left: 190px;
+    transform: rotate(30deg);
+    animation: rain 1s ease infinite;
+    animation-delay: 0.5;
+}
+#rain:after {
+    content: " ";
+    display:block;
+    position:absolute;
+    width: 10px;
+    height: 50px;
+    background: #2f97ff;
+    border-radius: 20px;
+    top:-10px;
+    left: 20px;
+    transform: rotate(0deg);
+    animation: rain 1s ease infinite;
+    animation-delay: 0.75;
+}
+#rain:before {
+    content: " ";
+    display:block;
+    position:absolute;
+    width: 10px;
+    height: 50px;
+    background: #2f97ff;
+    border-radius: 20px;
+    top:10px;
+    left: -20px;
+    transform: rotate(0deg);
+    animation: rain 1s ease infinite;
+    animation-delay: 0.25;    
+}
+
+@keyframes sun {
+    0% {
+        transform: scale(0);
+    }
+    80% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+-webkit-@keyframes sun {
+    0% {
+        transform: scale(0);
+    }
+    80% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes clouds {
+    0% {
+        transform: translateX(300%);
+    }
+    90% {
+        transform: translateX(-5%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+-webkit-@keyframes clouds {
+    0% {
+        transform: translateX(300%);
+    }
+    90% {
+        transform: translateX(-5%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+
+@keyframes rain {
+    0% {
+        opacity: 1; 
+    }
+    75% {
+        opacity: 0.3;
+    }
+    100% {
+        transform: translateY(40px) translateX(-30px) rotate(30deg);
+        opacity: 0;
+    }
+}
 
 
 
