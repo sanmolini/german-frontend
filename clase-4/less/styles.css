@@ -1,0 +1,56 @@
+.font {
+  font-size: 34px;
+  font-family: "Georgia", serif;
+  font-weight: bold;
+}
+.borderRed {
+  border: solid 1px red;
+}
+body {
+  background: #cc88ea;
+}
+body .container {
+  margin: auto;
+  width: 900px;
+}
+body .container h1 {
+  color: #4f126a;
+  border: solid 1px rgba(0, 0, 0, 0.5);
+  font-size: 34px;
+  font-family: "Georgia", serif;
+  font-weight: bold;
+  width: 600px;
+}
+body .container h2 {
+  color: black;
+  border: solid 1px red;
+}
+body .container p {
+  color: #444;
+}
+body .container p span {
+  color: #ff4444;
+}
+body .container p img {
+  border: solid 1px red;
+  float: right;
+}
+body .container p a {
+  background: #f00;
+  color: #FFF;
+  padding: 10px;
+  display: table;
+  -webkit-border-radius: 5px 20px;
+  -moz-border-radius: 5px 20px;
+  border-radius: 5px 20px;
+  -webkit-transition: ease-in 1s;
+  -moz-transition: ease-in 1s;
+  transition: ease-in 1s;
+}
+body .container p a:hover {
+  background: #ffffff;
+  color: #4f126a;
+  -webkit-border-radius: 20px 5px;
+  -moz-border-radius: 20px 5px;
+  border-radius: 20px 5px;
+}
