@@ -1,0 +1,320 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>LESS - SASS</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <link rel="stylesheet" href="css/normalize.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <!--Animate.css-->
+    <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+</head>
+
+<body>
+    <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+<div class="container">
+    <h1>Sass</h1>
+    <p>es un lenguaje de hoja de estilos inicialmente diseñado por Hampton Catlin y desarrollado por Nathan Weizenbaum.</p>
+    <p>Es un lenguaje de script que es traducido a CSS. SassScript es el lenguaje de script en sí mismo. Sass consiste en dos sintaxis. La sintaxis original, llamada indented syntax («sintaxis indentada») que usa una sintaxis similar al Haml.3 Éste usa la indentación para separar bloques de código y el carácter nueva línea para separar reglas. La sintaxis más reciente, SCSS, usa el formato de bloques como CSS. Éste usa llaves para denotar bloques de código y punto y coma (;) para separar las líneas dentro de un bloque. La sintaxis indentada y los ficheros SCSS tienen las extensiones .sass y .scss respectivamente.</p>
+    <p>CSS3 consiste en una serie de selectores y pseudo-selectores que agrupan las reglas que son aplicadas. Sass (en el amplio contexto de ambas sintaxis) extiende CSS proveyendo de varios mecanismos que están presentes en los lenguajes de programación tradicionales, particularmente lenguajes orientados a objetos, pero éste no está disponible para CSS3 como tal.</p>
+    <p>Cuando SassScript se interpreta, éste crea bloques de reglas CSS para varios selectores que están definidos en el fichero SASS. El intérprete de SASS traduce SassScript en CSS. Alternativamente, Sass puede monitorear los ficheros .sass o .scss y convertirlos en un fichero .css de salida cada vez que el fichero .sass o .scss es guardado.</p>
+    <h3>Variables</h3>
+    <p>Sass permite la definición de variables. Las variables comienzan con el signo de dólar ($). La asignación de variables se hace con los dos puntos (:).</p>
+    <p>
+        Las variables pueden ser resultados o argumentos de varias funciones.7 disponibles. Durante el proceso de traducción, los valores de las variables son insertados en el documento CSS de salida.
+    </p>
+    <p><strong>En el estilo SCSS:</strong></p>
+    <pre>
+$blue: #3bbfce;
+$margin: 16px;
+
+.content-navigation {
+  border-color: $blue;
+  color:
+    darken($blue, 9%);
+}
+
+.border {
+  padding: $margin / 2;
+  margin: $margin / 2;
+  border-color: $blue;
+}        
+    </pre>
+    <p><strong>O en el estilo SASS:</strong></p>
+    <pre>
+$blue: #3bbfce
+$margin: 16px
+
+.content-navigation
+  border-color: $blue
+  color: darken($blue, 9%)
+
+.border
+  padding: $margin/2
+  margin:  $margin/2
+  border-color: $blue        
+    </pre>
+    <p>Esto compilado quedaría de la siguiente forma:</p>
+    <pre>
+.content-navigation {
+  border-color: #3bbfce;
+  color: #2b9eab;
+}
+
+.border {
+  padding: 8px;
+  margin: 8px;
+  border-color: #3bbfce;
+}        
+    </pre>
+    <h3>Nesting (Anidamiento)</h3>
+    <p>CSS soporta anidamiento lógico, pero los bloques de código no son anidados. Sass permite que el código anidado sea insertado dentro de cualquier otro bloque</p>
+   <pre>
+table.hl {
+  margin: 2em 0;
+  td.ln {
+    text-align: right;
+  }
+}
+
+li {
+  font: {
+    family: serif;
+    weight: bold;
+    size: 1.2em;
+  }
+}       
+   </pre>
+   <p>Esto compilado quedaría de la siguiente forma:</p>
+   <pre>
+table.hl {
+  margin: 2em 0;
+}
+table.hl td.ln {
+  text-align: right;
+}
+
+li {
+  font-family: serif;
+  font-weight: bold;
+  font-size: 1.2em;
+}       
+   </pre>
+   <h3>Partials:</h3>
+   <p>Se pueden crear archivos parciales de <strong>SASS</strong> que se pueden incluir en otros archivos SASS.</p>
+   <p>Un partial es simplemente un archivo de SASS nombrado con la barra baja adelante: <e>_partial.sass</e>. Lo único que hace la barra es no generar un archivo css a partir del mismo, sino que es una parte del Sass. </p>
+   <p>Para incluir un partial, lo que se debe hacer es llamar a la directiva <strong>@import</strong> y el partial a incluir.</p>
+   <h4>Ejemplo:</h4>
+   <p>partial <strong>_reset.sass</strong>:</p>
+   <pre>
+// _reset.sass
+
+html,
+body,
+ul,
+ol
+  margin:  0
+  padding: 0       
+   </pre>
+   <p>Archivo base: <strong>base.sass</strong>:</p>
+   <pre>
+/ base.sass
+
+@import reset
+
+body
+  font: 100% Helvetica, sans-serif
+  background-color: #efefef
+       
+   </pre>
+   <p>Resultado:</p>
+   <pre>
+html, body, ul, ol {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font: 100% Helvetica, sans-serif;
+  background-color: #efefef;
+}       
+   </pre>
+   <h3>Mixins</h3>
+   <p>CSS no soporta mixins. Cualquier código duplicado debe ser repetido en cada lugar. Un mixin es una sección de código que contiene código Sass. Cada vez que se llama un mixin en el proceso de conversión el contenido del mismo es insertado en el lugar de la llamada. Los mixin permiten una solución limpia a las repeticiones de código, así como una forma fácil de alterar el mismo.</p>
+   <pre>
+@mixin table-base {
+  th {
+    text-align: center;
+    font-weight: bold;
+  }
+  td, th {padding: 2px}
+}
+
+#data {
+  @include table-base;
+}       
+   </pre>
+   <p>Compilado: SCSS</p>
+   <pre>
+#data th {
+  text-align: center;
+  font-weight: bold;
+}
+#data td, #data th {
+  padding: 2px;
+}       
+   </pre>
+   <p>Otro ejemplo, en SASS</p>
+   <pre>
+=border-radius($radius)
+  -webkit-border-radius: $radius
+  -moz-border-radius:    $radius
+  -ms-border-radius:     $radius
+  border-radius:         $radius
+
+.box
+  +border-radius(10px)       
+   </pre>
+    <p>Resultado:</p>
+    <pre>
+.box {
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  border-radius: 10px;
+}        
+    </pre>
+   <h3>Argumentos</h3>
+   <p>Los mixins también soportan argumentos.</p>
+   <pre>
+@mixin left($dist) {
+  float: left;
+  margin-left: $dist;
+}
+
+#data {
+  @include left(10px);
+}       
+   </pre>
+   <p>Compilado:</p>
+   <pre>
+#data {
+  float: left;
+  margin-left: 10px;
+}
+   </pre>
+   <p>Combinando:</p>
+   <pre>
+@mixin table-base {
+  th {
+    text-align: center;
+    font-weight: bold;
+  }
+  td, th {padding: 2px}
+}
+
+@mixin left($dist) {
+  float: left;
+  margin-left: $dist;
+}
+
+#data {
+  @include left(10px);
+  @include table-base;
+}       
+   </pre>
+   <p>Compila:</p>
+   <pre>
+#data {
+  float: left;
+  margin-left: 10px;
+}
+#data th {
+  text-align: center;
+  font-weight: bold;
+}
+#data td, #data th {
+  padding: 2px;
+}       
+   </pre>
+   <h3>Herencia de selectores</h3>
+   <p>Mientras CSS3 soporta la jerarquía Document Object Model (DOM), éste no permite la herencia de selectores. La herencia se logra insertando una línea dentro de un bloque de código que use la palabra clave @extend y haga referencia a otro selector. Los atributos del selector extendido serán aplicados al selector que hace la llamada.</p>
+    <pre>
+.error {
+  border: 1px #f00;
+  background: #fdd;
+}
+.error.intrusion {
+  font-size: 1.3em;
+  font-weight: bold;
+}
+
+.badError {
+  @extend .error;
+  border-width: 3px;
+}        
+    </pre>   
+   <p>Debe compilar:</p>
+   <pre>
+.error, .badError {
+  border: 1px #f00;
+  background: #fdd;
+}
+
+.error.intrusion,
+.badError.intrusion {
+  font-size: 1.3em;
+  font-weight: bold;
+}
+
+.badError {
+  border-width: 3px;
+}       
+   </pre>
+   <h3>Como instalar SASS</h3>
+    <ul>
+        <li>1- <a href="http://rubyinstaller.org/">Instalar Ruby</a></li>
+        <li>2- Abrir línea de comando</li>
+        <li>3- Instalar Sass: <pre>gem install sass</pre></li>
+        <li>4- Verificar si instaló Sass: <pre>sass -v</pre></li>
+    </ul>
+    </div>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script>
+        window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')
+    </script>
+
+    <script src="js/plugins.js"></script>
+    <script src="js/main.js"></script>
+
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+    <script>
+        (function (b, o, i, l, e, r) {
+            b.GoogleAnalyticsObject = l;
+            b[l] || (b[l] =
+                function () {
+                    (b[l].q = b[l].q || []).push(arguments)
+                });
+            b[l].l = +new Date;
+            e = o.createElement(i);
+            r = o.getElementsByTagName(i)[0];
+            e.src = '//www.google-analytics.com/analytics.js';
+            r.parentNode.insertBefore(e, r)
+        }(window, document, 'script', 'ga'));
+        ga('create', 'UA-XXXXX-X', 'auto');
+        ga('send', 'pageview');
+    </script>
+</body>
+
+</html>

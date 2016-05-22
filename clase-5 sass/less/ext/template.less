@@ -1,0 +1,49 @@
+//////// template
+.font{
+font-size: 34px;
+font-family: "Georgia", serif;
+font-weight: bold;
+}
+
+.borderRed {
+	border:solid 1px red;
+}
+body {
+	background: @bg;
+	.container {
+		margin:auto;
+		width:900px;
+		h1 {
+			color: @heading;
+			border:solid 1px rgba(0,0,0,0.5);
+			.font;
+			
+			width:@width * 2;
+		}
+		h2 {
+			color: @pope;
+			.borderRed;
+		}
+		p {
+			color: @textColor;
+			span {color:@textColor  + @anchor;}
+			img {
+				.borderRed;
+				float:right;
+			}
+			a {
+				background: @anchor;
+				color: @secondaryColor;
+				padding:10px;
+				display: table;
+				.border-radius(5px,20px);
+				.transition(ease-in, 1s);
+				&:hover {
+					background: lighten(@anchor, 100%);
+					color:@heading;
+					.border-radius(20px,5px);
+				}
+			}
+		}
+	}
+}
