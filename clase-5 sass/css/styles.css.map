@@ -1,7 +1,7 @@
 {
 "version": 3,
 "mappings": ";AACA,CAAC;EACC,MAAM,EAAE,CAAC;EACT,OAAO,EAAE,CAAC",
-"sources": ["partials/_reset.sass"],
+"sources": ["../sass/partials/_reset.sass"],
 "names": [],
-"file": "output.css"
+"file": "styles.css"
 }
