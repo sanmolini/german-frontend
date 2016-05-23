@@ -1,0 +1,328 @@
+<html>
+
+<head>
+
+    <style type="text/css">
+        body {
+            font-family: Arial;
+            font-size: 16px;
+            line-height: 19px;
+        }
+        /* Generic */
+        
+        h1:first-child,
+        h2:first-child,
+        h3:first-child,
+        h4:first-child,
+        p:first-child {
+            margin-top: 0;
+        }
+        
+        .clearer {
+            clear: both;
+        }
+        
+        .text-center {
+            text-align: center;
+        }
+        
+        .no-margin-bottom {
+            margin-bottom: 0;
+        }
+        
+        .bg-tangerine {
+            background-color: #eb8c00;
+        }
+        
+        .bg-orange {
+            background-color: #dc6900;
+        }
+        
+        .bg-red {
+            background-color: #e0301e;
+        }
+        
+        .bg-rose {
+            background-color: #db536a;
+        }
+        
+        .bg-burgundy {
+            background-color: #a32020;
+        }
+        
+        .bg-maroon {
+            background-color: #602320;
+        }
+        
+        .bg-grey {
+            background-color: #9686cd;
+        }
+        
+        .bg-black {
+            background-color: #6d6a71;
+        }
+        /* END Generic */
+        
+        .talent-wrapper {
+            width: 1200px;
+            position: relative;
+        }
+        
+        .talent-wrapper .row {
+            margin-bottom: 5px;
+            display: table;
+            clear: both;
+            content: "";
+            width: 100%;
+        }
+        
+        .talent-wrapper .row:after {
+            content: "";
+            clear: both;
+            margin-bottom: 5px;
+        }
+        
+        .talent-wrapper .row .col {
+            float: left;
+            margin-right: 5px;
+            box-sizing: border-box;
+        }
+        
+        .talent-wrapper .row .col:last-child {
+            margin-right: 0;
+        }
+        
+        .talent-wrapper .row .col p{
+            font-family: Arial;
+            margin-bottom: 10px;
+            font-size: 16px;
+            line-height: 21px;
+        }
+        
+        .talent-wrapper .row.row-4 .col:last-child {
+            width: 23.7% !important;
+        }
+        
+        .talent-wrapper .row.row-4 .col {
+            width: 25%;
+        }
+        
+        .talent-wrapper .bg-solid,
+        .talent-wrapper .bg-solid a,
+        .talent-wrapper .bg-solid p a,
+        .talent-wrapper .bg-solid h2 a {
+            color: #fff !important;
+        }
+        /* Banner */
+        
+        .talent-wrapper .banner {
+            width: 1200px;
+            height: 285px;
+            position: relative;
+        }
+        
+        .talent-wrapper .banner .content {
+            z-index: 1;
+            position: relative;
+            padding: 20px;
+        }
+        
+        .banner h1 {
+            color: #FFF;
+            font-family: Georgia;
+            font-style: italic;
+            font-weight: bold;
+            font-size: 38px;
+            width: 430px;
+            line-height: 42px;
+        }
+        
+        .talent-wrapper .banner h1 span {
+            display: block;
+            font-weight: normal;
+        }
+        
+        .talent-wrapper .banner img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 0;
+        }
+        
+        .talent-wrapper .banner .tile {
+            position: absolute;
+            left: 340px;
+            width: 650px;
+            background-color: rgba(150, 140, 109, 0.7);
+            padding: 20px;
+            color: #FFF;
+            font-family: Georgia;
+            font-size: 19px;
+            line-height: 25px;
+            top: 90px;
+        }
+        /* END Banner */
+        /* START Boxes */
+        
+        .talent-wrapper a.box,
+        .talent-wrapper a.box h2,
+        .talent-wrapper a.box p {
+            text-decoration: none !important;
+        }
+        
+        .talent-wrapper .box {
+            padding: 15px;
+            box-sizing: border-box;
+            width: 100%;
+            position: relative;
+            display: block;
+        }
+        
+        .talent-wrapper .box.box-match-height {
+            min-height: 420px;
+        }
+        
+        .talent-wrapper .box h2 {
+            font-family: Georgia;
+            font-style: italic;
+            font-weight: normal;
+            font-size: 22px;
+            line-height: 27px;
+        }
+        
+        .talent-wrapper .box.bg-solid a,
+        .talent-wrapper .box.bg-solid p a,
+        .talent-wrapper .box.bg-solid h2 a{
+            color: #FFF !important;
+            text-decoration: none !important;
+        }
+        
+        .talent-wrapper .row.row-4 .col.box h2 {
+            width: 170px;
+            float: left;
+            margin-bottom: 10px;
+        }
+        
+        .talent-wrapper .row.row-4 .col.box span.icon {
+            float: right;
+            width: 62px;
+        }
+        
+        .talent-wrapper .box span.icon-right {
+            position: absolute;
+            right: 15px;
+            top: -5px;
+        }
+        /* END Boxes */
+    </style>
+</head>
+
+<body>
+
+    <div class="talent-wrapper">
+        <div class="row">
+            <div class="banner">
+                <div class="content">
+                    <h1>Global Talent Management <span>Framework</span></h1>
+                    <div class="tile">This site is intended primarily to support Talent Management leaders across the globe. Our aim is for Network alignment in how we approach and run Talent Management. The content is intended to enable 'freedom within a framework' - providing good-practice tools, templates and guidelines, but room for customization to meet your local needs.</div>
+                </div>
+                <img src="img/banner.jpg" alt="Talent Management">
+            </div>
+        </div>
+
+        <div class="row row-4">
+            <div href="#" class="col box box-match-height bg-solid bg-tangerine">
+                <div class="header">
+                    <h2><a href="#">Align<br />Strategies</a></h2>
+                    <span class="icon">
+                    <img src="img/ic-align.png" alt="Align Strategies">
+                </span>
+                    <div class="clearer"></div>
+                </div>
+                <div class="content">
+                    <p><a href="#">Engage the business to own and drive the Talent Review process; Implement process improvements.</a></p>
+                    <p>Align talent strategy with the territory strategic business plan.</p>
+                    <p>Agree on Talent Review process and goals with business leaders.</p>
+                    <p>Establish and operate business-led Talent Councils.</p>
+                    <p>Use templates to gather data for use in Talent Councils.</p>
+                </div>
+            </div>
+
+            <div href="#" class="col box box-match-height bg-solid bg-orange">
+                <div class="header">
+                    <h2>Differentiate<br />talent</h2>
+                    <span class="icon">
+                    <img src="img/ic-differentiate.png" alt="Differentiate talent">
+                </span>
+                    <div class="clearer"></div>
+                </div>
+                <div class="content">
+                    <p>Assess talent on performance, potential and readiness</p>
+                    <p>Evaluate talent pipeline based on business needs and identify any gaps/surpluses</p>
+                    <p>Analyze talent pools, including diversity information</p>
+                    <p>Identify key/critical roles requiring succession planning and identify both near and long term successors.</p>
+                </div>
+            </div>
+
+            <div href="#" class="col box box-match-height bg-solid bg-red">
+                <div class="header">
+                    <h2>Develop<br />talent</h2>
+                    <span class="icon">
+                    <img src="img/ic-develop.png" alt="Develop talent">
+                </span>
+                    <div class="clearer"></div>
+                </div>
+                <div class="content">
+                    <p>Coaches conduct conversations about performance, potential and development, and document in plans as appropriate.</p>
+                    <p>Prepare and use individual development plans for all talent.</p>
+                    <p>Provide distinctive development experiences for key talent</p>
+                    <p>Provide real-time feedback</p>
+                    <p>Support career transitions and mobility</p>
+                </div>
+            </div>
+
+            <div href="#" class="col box box-match-height bg-solid bg-rose">
+                <div class="header">
+                    <h2>Measure<br />impact</h2>
+                    <span class="icon">
+                    <img src="img/ic-measure.png" alt="Measure impact">
+                </span>
+                    <div class="clearer"></div>
+                </div>
+                <div class="content">
+                    <p>Measure impact of key talent programmes.</p>
+                    <p>Link development planning to succession planning.</p>
+                    <p>Measure and evaluate Talent Management processes, tools and outcomes.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div href="#" class="box bg-solid bg-burgundy">
+                <div class="header">
+                    <h2 class="text-center no-margin-bottom">Diversity</h2>
+                    <span class="icon icon-right">
+                        <img src="img/ic-diversity.png" alt="Diversity">
+                    </span>
+                    <div class="clearer"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div href="#" class="box bg-solid bg-maroon">
+                <div class="header">
+                    <h2 class="text-center no-margin-bottom">Analytics</h2>
+                    <span class="icon icon-right">
+                        <img src="img/ic-analytics.png" alt="Analytics">
+                    </span>
+                    <div class="clearer"></div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</body>
+
+</html>
