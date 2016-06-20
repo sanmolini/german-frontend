@@ -1,0 +1,53 @@
+.title {
+  font-family: Georgia;
+  font-size: 20px;
+}
+.text {
+  font-family: Arial;
+  font-size: 13px;
+}
+.bloque {
+  width: 20%;
+  float: left;
+  margin-right: 5px;
+  position: relative;
+  color: white;
+  padding: 10px;
+}
+.talent-wrapper {
+  width: 1200px;
+  position: relative;
+}
+.talent-wrapper .col {
+  width: 20%;
+  float: left;
+  margin-right: 5px;
+  position: relative;
+  color: white;
+  padding: 10px;
+}
+.talent-wrapper .col h2 {
+  font-family: Georgia;
+  font-size: 20px;
+}
+.talent-wrapper .col p {
+  font-family: Arial;
+  font-size: 13px;
+}
+.talent-wrapper .col img {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
+.talent-wrapper .col:nth-child(1) {
+  background-color: #eb8c00;
+}
+.talent-wrapper .col:nth-child(2) {
+  background-color: #dc6900;
+}
+.talent-wrapper .col:nth-child(3) {
+  background-color: #e0301e;
+}
+.talent-wrapper .col:nth-child(4) {
+  background-color: #db536a;
+}
